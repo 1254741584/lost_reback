@@ -1,0 +1,55 @@
+	user{					   --用户表
+		uid int primarykey ,   --主键
+		uname varchar2(200) ,  --用户名  
+		pwd   varchar2(20) ,   --密码
+		weixin varchar2(200),  --绑定微信
+		qq		varchar2(200), --绑定qq
+		tel 	varchar2(200), --电话
+		sign   varchar2(500)， --个性签名
+		img		varchar2(50)， --头像
+		ceatetime date,        --注册时间
+	}
+	
+
+	type{									--失物类型表
+		tid  		int primarykey ,   		--主键
+		tname		varchar2(50),			--类型名称
+	}
+	
+	
+	
+	
+
+	lost{									--失物表
+		lid 		int primarykey ,   		--主键
+		name		varchar2(50),           --遗失物品名称 
+		lostdate 	varchar2(100),					--遗失时间
+		lostinfo    text,					--遗失物品信息
+		img 		varchar2(100),			--遗失物品图片
+		type 		int,					--遗失物品类型
+		createdata	data,					--提交时间
+		status		int,					--状态
+		uid			int,					--用户id
+	}
+	
+	
+	collect{								--捡取表
+		cid			int primarykey ,   		--主键
+		name		varchar2(50),           --捡取物品名称 
+		lostdate 	data,					--捡取时间
+		lostinfo    text,					--捡取物品信息
+		img 		varchar2(100),			--遗失物品图片
+		type 		int,					--捡取物品类型
+		status		int,					--状态
+		uid			int,					--用户id
+	}	
+	
+	
+	success{								--成功记录表
+		sid			int primarykey ,   		--主键
+		lid			int,					--遗失物品id
+		cid			int,					--捡取物品id
+		sdata		data,					--成功时间时间
+	}
+	
+	
