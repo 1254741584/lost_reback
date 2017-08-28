@@ -16,7 +16,7 @@ public class TestController {
         model.put("message", "这是测试的内容。。。");  
         model.put("toUserName", "张三");  
         model.put("fromUserName", "老许");  
-        return "welcome"; //自动寻找resources/templates中名字为welcome.vm的文件作为模板，拼装后返回  
+        return "index"; //自动寻找resources/templates中名字为welcome.vm的文件作为模板，拼装后返回  
     }  
 	
 }
