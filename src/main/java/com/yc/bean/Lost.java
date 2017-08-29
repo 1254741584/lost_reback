@@ -1,7 +1,14 @@
 package com.yc.bean;
 
-public class Lost {
+import java.io.Serializable;
+
+public class Lost implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int lid;  //id
 	
 	private String name;  //名字

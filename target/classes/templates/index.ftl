@@ -34,14 +34,8 @@ float:right;
 </style>
 </head>
 <body>  
-
-<div class="menu">
-	<div class="menu_left"></div>
-	<div class="menu_right">
-		 <#include "/header.ftl" >  
-	</div>
-</div>
-
+<#include "/header.ftl" >  
+<#include "/menu.ftl" >  
   
   
 </body>  

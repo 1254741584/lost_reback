@@ -1,6 +1,13 @@
 package com.yc.bean;
 
-public class Type {
+import java.io.Serializable;
+
+public class Type implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private int tid;
 	

@@ -1,7 +1,14 @@
 package com.yc.bean;
 
-public class Success {
+import java.io.Serializable;
+
+public class Success implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int sid;
 	
 	private int lid;

@@ -1,8 +1,15 @@
 package com.yc.bean;
 
-public class Collect {
+import java.io.Serializable;
+
+public class Collect implements Serializable{
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private int cid;
 	
 	private String name;

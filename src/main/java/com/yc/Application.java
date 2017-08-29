@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RestController;
 @MapperScan("com.yc.dao")
 public class Application {
 	
-	
 	  public static void main(String[] args) {  
 	          SpringApplication.run(Application.class, args);  
 	  }  

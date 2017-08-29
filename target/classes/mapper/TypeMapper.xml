@@ -8,7 +8,9 @@
 	
 	<cache></cache>
 	
-	
+	<select id="findAllType" parameterType="HashMap" resultType="Type">
+		select * from type
+	</select>
 	
 	
 	

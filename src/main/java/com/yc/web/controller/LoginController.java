@@ -1,5 +1,6 @@
 package com.yc.web.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -8,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.yc.bean.Type;
 import com.yc.bean.User;
+import com.yc.biz.TypeBiz;
 import com.yc.biz.UserBiz;
 
 @Controller
@@ -18,6 +21,19 @@ public class LoginController {
 	@Resource(name="userBiz")
 	private UserBiz userBiz;
 	
+	@Resource(name="typeBiz")
+	private TypeBiz typeBiz;
+	
+	
+	public void setUserBiz(UserBiz userBiz) {
+		this.userBiz = userBiz;
+	}
+
+	public void setTypeBiz(TypeBiz typeBiz) {
+		this.typeBiz = typeBiz;
+	}
+
+
 	@RequestMapping("/index")  
     public String index(Map<String, Object> model,HttpServletRequest req) { 
 		
@@ -25,7 +41,10 @@ public class LoginController {
 		/*if(username==null){
 			username="";
 		}*/
+		List<Type> types=this.typeBiz.findAllType();
         model.put("UserName", username);  
+        model.put("type", types);  
+        model.put("index", 1);  
         return "index"; 
     }  
 	
