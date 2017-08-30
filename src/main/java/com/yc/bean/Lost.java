@@ -23,12 +23,15 @@ public class Lost implements Serializable{
 	
 	private String typename;  //失物类型名称
 	
-	private String createdata;  //创建时间
+	private String createdate;  //创建时间
 	
 	private int status;  //状态
 	
 	private int uid;  //用户id
 
+	
+	
+	
 	public int getLid() {
 		return lid;
 	}
@@ -77,12 +80,14 @@ public class Lost implements Serializable{
 		this.type = type;
 	}
 
-	public String getCreatedata() {
-		return createdata;
+	
+
+	public String getCreatedate() {
+		return createdate;
 	}
 
-	public void setCreatedata(String createdata) {
-		this.createdata = createdata;
+	public void setCreatedate(String createdate) {
+		this.createdate = createdate;
 	}
 
 	public int getStatus() {
@@ -112,9 +117,11 @@ public class Lost implements Serializable{
 	@Override
 	public String toString() {
 		return "Lost [lid=" + lid + ", name=" + name + ", lostdate=" + lostdate + ", lostinfo=" + lostinfo + ", img="
-				+ img + ", type=" + type + ", typename=" + typename + ", createdata=" + createdata + ", status="
+				+ img + ", type=" + type + ", typename=" + typename + ", createdate=" + createdate + ", status="
 				+ status + ", uid=" + uid + "]";
 	}
+
+
 
 	
 	

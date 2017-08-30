@@ -34,7 +34,7 @@
 		lostinfo    text,					--遗失物品信息
 		img 		varchar2(100),			--遗失物品图片
 		type 		int,					--遗失物品类型
-		createdata	data,					--提交时间
+		createdate	data,					--提交时间
 		status		int,					--状态
 		uid			int,					--用户id
 	}

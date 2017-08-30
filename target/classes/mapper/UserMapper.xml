@@ -8,7 +8,9 @@
 	
 	<cache></cache>
 	
-	
+	<select id="login" parameterType="User" resultType="User">
+		select * from user where uname=#{uname} and pwd=#{pwd}
+	</select>
 	
 	
 </mapper>

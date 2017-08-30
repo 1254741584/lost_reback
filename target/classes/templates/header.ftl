@@ -1,1 +1,1 @@
-${UserName?default('<a href="login">登录</a>|<a href="register">注册</a>')}
+${UserName?default('<a href="login">登录</a>|<a href="register">注册</a>')}<a href="addlost">添加失物</a>

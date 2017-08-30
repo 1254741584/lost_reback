@@ -20,6 +20,16 @@ background:#E8F2FE;
 width:100%;
 height:30px;
 background:#CED8E8;
+
+}
+
+.menu ul li{
+display:inline-block;
+width:100px;
+line-height: 30px
+height:30px;
+margin: 2px auto;
+text-align: center;
 }
 
 .menu_left{
@@ -35,8 +45,10 @@ float:right;
 </head>
 <body>  
 <#include "/header.ftl" >  
-<#include "/menu.ftl" >  
-  
+
+ <div class='menu'>
+ <#include "/menu.ftl" >  
+ </div> 
   
 </body>  
 </html>  

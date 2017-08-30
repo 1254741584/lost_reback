@@ -8,11 +8,18 @@
 	
 	<cache></cache>
 	
-	
+	<insert id="addLost" parameterType="Lost" >
+		insert into lost(uid,type,lostinfo,lostdate,createdate,img,name,status) 
+		values(#{uid},#{type},#{lostinfo},#{lostdate},#{createdate},#{img},#{name},1)
+	</insert>
 	
 	<select id="findAll" parameterType="HashMap" resultType="HashMap">
 		select * from lost
 	</select>
 	
+	
+	<select id="findLostByType" parameterType="Integer" resultType="HashMap">
+		select * from lost where type=#{id}
+	</select>
 	
 </mapper>

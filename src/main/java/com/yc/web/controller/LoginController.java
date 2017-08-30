@@ -15,7 +15,7 @@ import com.yc.biz.TypeBiz;
 import com.yc.biz.UserBiz;
 
 @Controller
-@RequestMapping("/Test") 
+@RequestMapping("/lost") 
 public class LoginController {
 	
 	@Resource(name="userBiz")
@@ -43,15 +43,15 @@ public class LoginController {
 		}*/
 		List<Type> types=this.typeBiz.findAllType();
         model.put("UserName", username);  
-        model.put("type", types);  
-        model.put("index", 1);  
+        model.put("index", 1); 
+        req.getSession().setAttribute("type", types);
         return "index"; 
     }  
 	
 	
 	@RequestMapping("/login")  
     public String login(Map<String, Object> model,HttpServletRequest req) {
-		model.put("info", "账号或密码错误");
+		model.put("info", "");
         return "login"; 
     }  
 	
@@ -59,10 +59,13 @@ public class LoginController {
     public String dologin(Map<String, Object> model,HttpServletRequest req) {
 		String name=req.getParameter("name");
 		String pwd=req.getParameter("pwd");
+		//System.out.println("name==>"+name+"\t"+pwd);
 		User user=this.userBiz.findUser(name, pwd);
 		if(user!=null){
 			req.getSession().setAttribute("username", name);
-			model.put("UserName", name);
+			req.getSession().setAttribute("uid", user.getUid());
+			model.put("UserName", "欢迎您:"+name);
+			model.put("index", 1); 
 			return "index"; 
 		}
 		model.put("info", "账号或密码错误");

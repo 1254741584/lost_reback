@@ -17,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<!-- <properties resource="db.properties">
 	</properties> -->
 	<settings>
-		<setting name="logImpl" value="Log4j"></setting>
+		<setting name="logImpl" value="LOG4J"></setting>
 	</settings>
 	<!-- <typeAliases>
 		<typeAlias />

@@ -1,5 +1,8 @@
 package com.yc.dao;
 
-public interface UserMapper {
+import com.yc.bean.User;
 
+public interface UserMapper {
+	
+	public User login(User user);
 }

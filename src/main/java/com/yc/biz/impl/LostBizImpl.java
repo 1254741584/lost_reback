@@ -28,8 +28,8 @@ public class LostBizImpl implements LostBiz{
 
 	@Override
 	public int addLost(Lost lost) {
-		
-		return 0;
+		this.lostmapper.addLost(lost);
+		return 1;
 	}
 
 	@Override
@@ -40,8 +40,8 @@ public class LostBizImpl implements LostBiz{
 
 	@Override
 	public List<Lost> findLostByType(int type) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return this.lostmapper.findLostByType(type);
 	}
 
 	@Override

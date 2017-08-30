@@ -1,13 +1,24 @@
 package com.yc.biz.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.bean.User;
 import com.yc.biz.UserBiz;
+import com.yc.dao.UserMapper;
 
 
 @Service("userBiz")
 public class userBizImpl implements UserBiz{
+
+	@Autowired
+	private UserMapper userMapper;
+	
+	
+	
+	public void setUserMapper(UserMapper userMapper) {
+		this.userMapper = userMapper;
+	}
 
 	@Override
 	public int addUser(User user) {
@@ -17,8 +28,10 @@ public class userBizImpl implements UserBiz{
 
 	@Override
 	public User findUser(String name, String pwd) {
-		// TODO Auto-generated method stub
-		return null;
+		User user=new User();
+		user.setUname(name);
+		user.setPwd(pwd);
+		return this.userMapper.login(user);
 	}
 
 	@Override

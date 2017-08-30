@@ -8,4 +8,5 @@ package com.yc.utils;
  */
 public class Utils {
 
+	final static String uri="E:/lost/"; 
 }
