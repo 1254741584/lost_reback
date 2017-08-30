@@ -53,6 +53,7 @@ public class LostController {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.CHINA);
 		String createdate=sdf.format(d);
 		lost.setCreatedate(createdate);
+		
 		String url=c.YEAR+File.separator+c.MONTH+File.separator+c.DAY_OF_MONTH;
 		String img=upload.uploadFile(request, url).get("lostimg");
 		lost.setImg(img);
