@@ -54,7 +54,7 @@ public class LostController {
 		String createdate=sdf.format(d);
 		lost.setCreatedate(createdate);
 		
-		String url=c.YEAR+File.separator+c.MONTH+File.separator+c.DAY_OF_MONTH;
+		String url=c.get(Calendar.YEAR)+File.separator+(c.get(Calendar.MONTH) + 1)+File.separator+c.get(Calendar.DAY_OF_MONTH);
 		String img=upload.uploadFile(request, url).get("lostimg");
 		lost.setImg(img);
 		String str="";

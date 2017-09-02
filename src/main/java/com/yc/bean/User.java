@@ -13,6 +13,8 @@ public class User implements Serializable{
 	
 	private String uname;
 	
+	private String name;
+	
 	private String pwd;
 	
 	private String weixin;
@@ -99,18 +101,27 @@ public class User implements Serializable{
 		this.ceatetime = ceatetime;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
-		return "User [uid=" + uid + ", uname=" + uname + ", pwd=" + pwd + ", weixin=" + weixin + ", qq=" + qq + ", tel="
-				+ tel + ", sign=" + sign + ", img=" + img + ", ceatetime=" + ceatetime + "]";
+		return "User [uid=" + uid + ", uname=" + uname + ", name=" + name + ", pwd=" + pwd + ", weixin=" + weixin
+				+ ", qq=" + qq + ", tel=" + tel + ", sign=" + sign + ", img=" + img + ", ceatetime=" + ceatetime + "]";
 	}
-	
+
 	
 	
 	
 	
 	/*user{					   --用户表
 		uid int primarykey ,   --主键
+		name varchar2(200) ,   --真实名
 		uname varchar2(200) ,  --用户名  
 		pwd   varchar2(20) ,   --密码
 		weixin varchar2(200),  --绑定微信

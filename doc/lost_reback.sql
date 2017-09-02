@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50027
 File Encoding         : 65001
 
-Date: 2017-08-26 14:52:36
+Date: 2017-09-02 10:31:35
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,13 +45,30 @@ CREATE TABLE `lost` (
   `lostinfo` text,
   `img` varchar(100) default NULL,
   `type` int(11) NOT NULL,
-  `createdata` varchar(100) NOT NULL,
+  `createdate` varchar(100) NOT NULL,
   `status` int(11) NOT NULL,
   `uid` int(11) NOT NULL,
   PRIMARY KEY  (`lid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+
+-- ----------------------------
+-- Table structure for `manger`
+-- ----------------------------
+DROP TABLE IF EXISTS `manger`;
+CREATE TABLE `manger` (
+  `addr` varchar(200) NOT NULL,
+  `mid` int(11) NOT NULL auto_increment,
+  `name` varchar(50) default NULL,
+  `uname` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
+  PRIMARY KEY  (`mid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of manger
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `success`
@@ -82,6 +99,15 @@ CREATE TABLE `type` (
 -- ----------------------------
 -- Records of type
 -- ----------------------------
+INSERT INTO type VALUES ('1', '手机');
+INSERT INTO type VALUES ('2', '证件');
+INSERT INTO type VALUES ('3', '书');
+INSERT INTO type VALUES ('4', '伞');
+INSERT INTO type VALUES ('5', '耳机');
+INSERT INTO type VALUES ('6', '宠物');
+INSERT INTO type VALUES ('7', '钥匙');
+INSERT INTO type VALUES ('8', '钱包');
+INSERT INTO type VALUES ('9', '其他');
 
 -- ----------------------------
 -- Table structure for `user`
@@ -100,6 +126,4 @@ CREATE TABLE `user` (
   PRIMARY KEY  (`uid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- ----------------------------
--- Records of user
--- ----------------------------
+

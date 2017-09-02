@@ -1,5 +1,6 @@
 	user{					   --用户表
 		uid int primarykey ,   --主键
+		name varchar2(200) ,   --真实名
 		uname varchar2(200) ,  --用户名  
 		pwd   varchar2(20) ,   --密码
 		weixin varchar2(200),  --绑定微信
@@ -13,6 +14,7 @@
 	manger{
 		mid int primarykey,
 		addr varchar2(100),   --位置
+		name varchar2(200) ,   --真实名
 		uname varchar2(200) ,  --用户名  
 		pwd   varchar2(20) ,   --密码
 		
