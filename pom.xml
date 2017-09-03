@@ -88,6 +88,8 @@
 	</dependencies>
 
 
+
+
 	<!-- <build> <plugins> <plugin> <groupId>org.springframework.boot</groupId> 
 		<artifactId>spring-boot-maven-plugin</artifactId> <configuration> <maimClass>paic.stock.ops.mainClass</maimClass> 
 		</configuration> <executions> <execution> <goals> <goal>repackage</goal> 
