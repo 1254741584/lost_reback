@@ -41,6 +41,23 @@ public class LostController {
 		return "addlost";
 	}
 	
+	@RequestMapping("/findlostdetail/{id}")
+	public String findLostDetail(@PathVariable int id,Model model,HttpServletRequest request){
+		Lost lost=this.lostBiz.findLostById(id);
+		
+		String uname=lost.getUname();
+		
+		String[] str=uname.split("");
+		String name=str[0];
+		for(int i=1,len=str.length;i<len;i++){
+			name+="*";
+		}
+		lost.setUname(name);
+		model.addAttribute("lost", lost);
+		model.addAttribute("request", request.getRequestURI());
+		return "lostdetail";
+	}
+	
 	@RequestMapping("/addlost.do")
 	public String addlost_do(HttpServletRequest request,Model model,Lost lost) throws Exception{
 		int uid=Integer.valueOf(String.valueOf(request.getSession().getAttribute("uid")));

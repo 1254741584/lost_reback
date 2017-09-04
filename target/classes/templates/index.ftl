@@ -49,6 +49,24 @@ float:right;
  <div class='menu'>
  <#include "/menu.ftl" >  
  </div> 
+ 
+ <div class="content">
+ 	<div class="content_lost">
+ 		<div class="content_lost_name">
+ 			寻物启事
+ 		</div>
+ 		<div class="content_lost_li">
+ 			<ul>
+				<#list losts as lost>
+				<li><a href="findlostdetail/${lost.lid}">${lost.name}</a></li>
+				</#list>
+			</ul>
+ 		</div>
+ 	</div>
+ 	<div class="content_collect">
+ 	
+ 	</div>
+ </div>
   
 </body>  
 </html>  

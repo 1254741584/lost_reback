@@ -83,6 +83,11 @@ public class UploadFileUtilbyimg {
 	
 	public  Map<String, String> uploadFile(HttpServletRequest req, String filepath) throws Exception {
 		String username=(String) req.getSession().getAttribute("username");
+		
+		String savepath=this.getClass().getClassLoader().getResource("").getPath();
+		for(int i=0;i<4;i++){
+			savepath=savepath.substring(0,savepath.lastIndexOf("/"));
+		}
 		Map<String, String> map = new HashMap<String, String>();
 		String url="";
 		CommonsMultipartResolver resolver = new CommonsMultipartResolver(req.getSession().getServletContext());
@@ -105,12 +110,14 @@ public class UploadFileUtilbyimg {
 		                        //重命名上传后的文件名  
 		                        String fileName = filepath +File.separator+username+i+".png";  
 		                        //定义上传路径  
-		                        String path = Utils.uri + fileName;
-		                        File pfile=new File(Utils.uri+filepath);
+		                        String path = savepath+File.separator+"lost" +File.separator+ fileName;
+		                        File pfile=new File(path.substring(0,path.lastIndexOf(File.separator)));
+		                        System.out.println(pfile);
 		                        if(!pfile.exists()){
 		                        	pfile.mkdirs();
 		                        	System.out.println(pfile.exists());
 		                        }
+		                        System.out.println(path);
 		                        File localFile = new File(path);  
 		                        mf.transferTo(localFile);
 		                        url+=fileName+",";

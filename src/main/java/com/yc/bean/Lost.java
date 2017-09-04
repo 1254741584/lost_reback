@@ -28,10 +28,20 @@ public class Lost implements Serializable{
 	private int status;  //状态
 	
 	private int uid;  //用户id
+	
+	private String uname;
 
 	
 	
 	
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
 	public int getLid() {
 		return lid;
 	}
@@ -118,8 +128,9 @@ public class Lost implements Serializable{
 	public String toString() {
 		return "Lost [lid=" + lid + ", name=" + name + ", lostdate=" + lostdate + ", lostinfo=" + lostinfo + ", img="
 				+ img + ", type=" + type + ", typename=" + typename + ", createdate=" + createdate + ", status="
-				+ status + ", uid=" + uid + "]";
+				+ status + ", uid=" + uid + ", uname=" + uname + "]";
 	}
+
 
 
 

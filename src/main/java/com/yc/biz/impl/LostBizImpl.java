@@ -1,6 +1,8 @@
 package com.yc.biz.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,5 +51,19 @@ public class LostBizImpl implements LostBiz{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Lost> findAll(int page,int row) {
+		Map<String ,Object> map=new HashMap<String,Object>();
+		map.put("page", page);
+		map.put("row", row);
+		return this.lostmapper.findAll(map);
+	}
+
+	@Override
+	public Lost findLostById(int id) {
+		return this.lostmapper.findLostById(id);
+	}
+	
 
 }

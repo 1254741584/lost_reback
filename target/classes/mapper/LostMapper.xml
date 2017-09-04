@@ -15,6 +15,14 @@
 	
 	<select id="findAll" parameterType="HashMap" resultType="HashMap">
 		select * from lost
+		order by createdate desc
+		<if test="page!=-1 and row!=-1">
+			limit #{row},#{page}
+		</if>
+	</select>
+	
+	<select id="findLostById" parameterType="Integer" resultType="Lost">
+		select l.*,u.uname as uname,t.tname as typename from lost l inner join user u on l.uid=u.uid  inner join type t on l.type=t.tid where lid=#{id}
 	</select>
 	
 	

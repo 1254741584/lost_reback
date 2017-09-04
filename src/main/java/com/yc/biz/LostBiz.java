@@ -40,4 +40,13 @@ public interface LostBiz {
 	 * 找回失物
 	 */
 	public int getLost(Lost lost);
+	
+	/**
+	 * --hwh
+	 * @param num  返回的条数
+	 * @return
+	 */
+	public List<Lost> findAll(int page,int row);
+	
+	public Lost findLostById(int id);
 }	

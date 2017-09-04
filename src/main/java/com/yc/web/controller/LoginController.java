@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.yc.bean.Lost;
 import com.yc.bean.Type;
 import com.yc.bean.User;
+import com.yc.biz.LostBiz;
 import com.yc.biz.TypeBiz;
 import com.yc.biz.UserBiz;
 
@@ -24,6 +26,15 @@ public class LoginController {
 	@Resource(name="typeBiz")
 	private TypeBiz typeBiz;
 	
+	@Resource(name="lostBiz")
+	private LostBiz lostBiz;
+	
+	
+	
+	public void setLostBiz(LostBiz lostBiz) {
+		this.lostBiz = lostBiz;
+	}
+
 	
 	public void setUserBiz(UserBiz userBiz) {
 		this.userBiz = userBiz;
@@ -41,7 +52,9 @@ public class LoginController {
 		/*if(username==null){
 			username="";
 		}*/
+		List<Lost> lost=this.lostBiz.findAll(10, 0);
 		List<Type> types=this.typeBiz.findAllType();
+		model.put("losts", lost);
         model.put("UserName", username);  
         model.put("index", 1); 
         req.getSession().setAttribute("type", types);
